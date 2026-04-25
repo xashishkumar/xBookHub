@@ -1,10 +1,10 @@
 
 
-#xBookHub — Full Stack Django Library Management System
+#xBookHub — Full Stack python Django Library Management System
 
 ##  Project Overview
 
-**xBookHub** is a full-stack web application built using **Django** and **Bootstrap**, designed to manage a digital library system. It allows users to **add, view, update, and delete books**, providing a complete CRUD-based solution.
+**xBookHub** is a full-stack web application built using **Python** **Django** and **Bootstrap**, designed to manage a digital library system. It allows users to **add, view, update, and delete books**, providing a complete CRUD-based solution.
 
 This project demonstrates strong understanding of **backend development, frontend templating, and database integration** using Django’s **MVT architecture**.
 
