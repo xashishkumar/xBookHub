@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'book_list' %}">Library</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ book.title }}</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h1 class="display-4">{{ book.title }}</h1>
+                    <p class="text-muted">By <strong>{{ book.author }}</strong> | Genre: <span class="badge bg-info text-dark">{{ book.genre }}</span></p>
+                    <hr>
+                    <h3>Description</h3>
+                    <p class="lead" style="white-space: pre-line;">
+                        {{ book.description }}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm border-primary">
+                <div class="card-header bg-primary text-white">
+                    Book Details
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>ISBN:</strong> {{ book.isbn }}</li>
+                    <li class="list-group-item"><strong>Published:</strong> {{ book.publication_date|date:"F d, Y" }}</li>
+                    <li class="list-group-item"><strong>Price:</strong> ₹{{ book.price }}</li>
+                    <li class="list-group-item"><strong>Rating:</strong> 
+                        <span class="text-warning">
+                            ★ {{ book.average_rating }} / 5.0
+                        </span>
+                    </li>
+                </ul>
+                <div class="card-footer d-grid gap-2">
+                    <a href="{% url 'book_update' book.id %}" class="btn btn-outline-secondary">Edit Details</a>
+                    <a href="{% url 'book_delete' book.id %}" class="btn btn-outline-danger">Remove from Library</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
